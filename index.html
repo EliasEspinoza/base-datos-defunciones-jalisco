@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos - Estadísticas de Defunciones Jalisco</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Estadísticas de Defunciones en Jalisco</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Resumen Estadístico</h2>
+            <p>Estas gráficas muestran un análisis de los datos registrados.</p>
+            <canvas id="barChart" width="400" height="200"></canvas>
+            <canvas id="pieChart" width="400" height="200"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Base de Datos - Defunciones Jalisco</p>
+    </footer>
+    <script>
+        // Datos simulados para las gráficas
+        const barData = {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+            datasets: [{
+                label: 'Defunciones por Mes',
+                data: [150, 200, 180, 220, 170],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        const pieData = {
+            labels: ['Hombres', 'Mujeres'],
+            datasets: [{
+                label: 'Distribución por Género',
+                data: [55, 45],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Renderizar gráficas
+        new Chart(document.getElementById('barChart'), {
+            type: 'bar',
+            data: barData,
+        });
+
+        new Chart(document.getElementById('pieChart'), {
+            type: 'pie',
+            data: pieData,
+        });
+    </script>
+</body>
+</html>
