@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base de Datos - Estadísticas de Defunciones Jalisco</title>
+    <title>Estadísticas de Defunciones - Jalisco</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
-        <h1>Estadísticas de Defunciones en Jalisco</h1>
+        <h1>Estadísticas de Defunciones</h1>
     </header>
     <main>
         <section>
-            <h2>Resumen Estadístico</h2>
-            <p>Estas gráficas muestran un análisis de los datos registrados.</p>
-            <canvas id="barChart" width="400" height="200"></canvas>
-            <canvas id="pieChart" width="400" height="200"></canvas>
+            <h2>Resumen</h2>
+            <div class="chart-container">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="pieChart"></canvas>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Base de Datos - Defunciones Jalisco</p>
+        <p>&copy; 2025 Estadísticas de Defunciones Jalisco</p>
     </footer>
     <script>
-        // Datos simulados para las gráficas
+        // Datos para la gráfica de barras
         const barData = {
             labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
             datasets: [{
@@ -35,10 +38,10 @@
             }]
         };
 
+        // Datos para la gráfica de pastel
         const pieData = {
             labels: ['Hombres', 'Mujeres'],
             datasets: [{
-                label: 'Distribución por Género',
                 data: [55, 45],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -52,15 +55,24 @@
             }]
         };
 
-        // Renderizar gráficas
+        // Crear gráfica de barras
         new Chart(document.getElementById('barChart'), {
             type: 'bar',
             data: barData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
         });
 
+        // Crear gráfica de pastel
         new Chart(document.getElementById('pieChart'), {
             type: 'pie',
             data: pieData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
         });
     </script>
 </body>
