@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta General - Defunciones Jalisco</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Consulta General de Defunciones - Jalisco</h1>
+    </header>
+    <main>
+        <form id="consultaForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo">
+            
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha">
+            
+            <label for="municipio">Municipio:</label>
+            <input type="text" id="municipio" name="municipio" placeholder="Municipio">
+            
+            <button type="submit">Buscar</button>
+        </form>
+
+        <table id="resultados">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Municipio</th>
+                    <th>Causa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán los resultados -->
+            </tbody>
+        </table>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
